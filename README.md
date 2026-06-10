@@ -1,6 +1,7 @@
 # FitbitToDrip
 
-Utility to convert Fitbit menstrual data to Drip menstrual data. Does not store data, all calculations are done in-browser. Tool available via github-pages: https://pc592.github.io/FitbitToDrip/
+Utility to convert Fitbit menstrual data to Drip menstrual data. Does not store data, all calculations are done in-browser.  
+Tool available via github-pages: https://pc592.github.io/FitbitToDrip/
 
 ## Backstory
 
@@ -19,11 +20,11 @@ I decided on Drip for privacy and security reasons, but I didn't want to lose my
 
 2. Convert the data.
     * Python
-        2. Replace the `menstrual_health_cycles.csv` and `menstrual_health_symptoms.csv` files in the test folder.
-        3. Run the python script.
+        1. Replace the `menstrual_health_cycles.csv` and `menstrual_health_symptoms.csv` files in the test folder.
+        2. Run the python script.
     * Tool
-        2. Select the files.
-        3. Click Upload.
+        1. Select the files.
+        2. Click Upload.
 
 4. Download the new file (fitbit_to_drip.csv) and import it to drip.
 
