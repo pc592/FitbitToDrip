@@ -1,6 +1,6 @@
 # FitbitToDrip
 
-Utility to convert Fitbit menstrual data to Drip menstrual data. Does not store data, all calculations are done in-browser.
+Utility to convert Fitbit menstrual data to Drip menstrual data. Does not store data, all calculations are done in-browser. Tool available via github-pages: https://pc592.github.io/FitbitToDrip/
 
 ## Backstory
 
@@ -14,16 +14,16 @@ I decided on Drip for privacy and security reasons, but I didn't want to lose my
 
 ## How to use
 
-1. Export your Fitbit menstrual health data as `.csv`
+1. Export your Fitbit menstrual health data as `.csv`.
     - Export both your cycles and symptoms (flow data - optional for the tool).
 
-#### Python
-2. Replace the `menstrual_health_cycles.csv` and `menstrual_health_symptoms.csv` files in the test folder.
-3. Run the python script.
-
-#### Tool
-2. Select the files.
-3. Click Upload.
+2. Convert the data.
+    * Python
+        2. Replace the `menstrual_health_cycles.csv` and `menstrual_health_symptoms.csv` files in the test folder.
+        3. Run the python script.
+    * Tool
+        2. Select the files.
+        3. Click Upload.
 
 4. Download the new file (fitbit_to_drip.csv) and import it to drip.
 
@@ -39,15 +39,16 @@ I decided on Drip for privacy and security reasons, but I didn't want to lose my
 ## Development/Contributing
 
 #### Python 3.10
-Follow this tutorial for installing python, vscode, and git, on Windows:  
+* Follow this tutorial for installing python, vscode, and git, on Windows:  
 https://docs.microsoft.com/en-us/windows/python/beginners
 
-Open main.py and use the play button to run main().
+* Open main.py and use the play button to run main().
 
 #### Tool / NPM 26.3.0
-Use nvm to manage verions of node. On Windows, the next best option is [nvm-windows](https://github.com/coreybutler/nvm-windows).
+* Use nvm to manage verions of node. On Windows, the next best option is [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
-In the root directory, run `npm install` then `npm run serve`.
+* In the root directory, run `npm install` then `npm run serve`.
 
-Lint: Uses typescript-eslint and [npx](https://docs.npmjs.com/cli/v11/commands/npx). Run `npm run lint`.
-Test: TODO?
+* Lint: Uses typescript-eslint and [npx](https://docs.npmjs.com/cli/v11/commands/npx). Run `npm run lint`.  
+
+* Test: TODO?
