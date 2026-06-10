@@ -49,7 +49,7 @@ const parseCyclesIntoStartEnd = async (cyclesFile?: File): Promise<CyclesType[]>
   if (!cyclesFile) {
     return [];
   }
-  let parsedData = await parseFile(cyclesFile);
+  const parsedData = await parseFile(cyclesFile);
   const isValid = validateFile(parsedData, ['period_start_date', 'period_end_date']);
   if (!isValid) {
     throw new Error('Invalid cycles.csv. Check the correct file was uploaded.');
@@ -68,7 +68,7 @@ const parseSymptomsIntoDict = async (symptomsFile?: File): Promise<SymptomsType>
   if (!symptomsFile) {
     return {};
   }
-  let parsedData = await parseFile(symptomsFile);
+  const parsedData = await parseFile(symptomsFile);
   const isValid = validateFile(parsedData, ['timestamp', 'flow']);
   if (!isValid) {
     throw new Error('Invalid symptoms.csv. Check the correct file was uploaded.');
@@ -83,7 +83,7 @@ const parseSymptomsIntoDict = async (symptomsFile?: File): Promise<SymptomsType>
 }
 
 const formatCyclesAndSymptoms = (periodStartEnd: CyclesType[], symptomsDict: SymptomsType) => {
-  let info = [];
+  const info = [];
   for (const period of periodStartEnd) {
     const startDate = DateTime.fromISO(period['start']);
     const endDate = DateTime.fromISO(period['end']);
@@ -96,7 +96,7 @@ const formatCyclesAndSymptoms = (periodStartEnd: CyclesType[], symptomsDict: Sym
         const periodDateStr = periodDate.toISODate();
         
         let bleedingValue = Flow.null;
-        let bleedingExclude = 'false';
+        const bleedingExclude = 'false';
         if (periodDateStr && periodDateStr in symptomsDict) {
           bleedingValue = symptomsDict[periodDateStr];
         }
@@ -138,14 +138,14 @@ const appendMsg = (container: HTMLDivElement, msg: string): void => {
   container.prepend(text);
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function(_event) {
   const cyclesInput = document.getElementById('cyclesFile') as HTMLInputElement;
-  cyclesInput.onchange = (e: Event) => {
+  cyclesInput.onchange = (_e: Event) => {
     disableDownloadBtn('download-btn');
   };
   
   const symptomsInput = document.getElementById('symptomsFile') as HTMLInputElement;
-  symptomsInput.onchange = (e: Event) => {
+  symptomsInput.onchange = (_e: Event) => {
     disableDownloadBtn('download-btn');
   };
 
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const symptomsFile = (target.symptomsFile as HTMLInputElement).files?.[0];
 
     let periodStartEnd: CyclesType[] = [];
-    let cyclesErr = false;
+    let cyclesErr;
     try {
       periodStartEnd = await parseCyclesIntoStartEnd(cyclesFile);
       cyclesErr = false;
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       cyclesErr = true;
     }
     let symptomsDict: SymptomsType = {};
-    let symptomsErr = false;
+    let symptomsErr;
     try {
       symptomsDict = await parseSymptomsIntoDict(symptomsFile);
       symptomsErr = false;
