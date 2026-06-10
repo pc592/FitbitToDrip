@@ -1,0 +1,43 @@
+{
+  "name": "fitbit-to-drip",
+  "version": "0.0.1",
+  "description": "Utility to convert Fitbit menstrual data to Drip menstrual data.",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --mode=production --config-node-env=production",
+    "build:dev": "webpack --mode=development",
+    "lint": "npx eslint src/ --ext .js",
+    "serve": "webpack serve --watch",
+    "test": "jest",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pc592/FitbitToDrip.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pc592/FitbitToDrip/issues"
+  },
+  "homepage": "https://github.com/pc592/FitbitToDrip#readme",
+  "devDependencies": {
+    "@types/luxon": "^3.7.1",
+    "@types/papaparse": "^5.5.2",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.7",
+    "jest": "^30.4.2",
+    "ts-loader": "^9.6.0",
+    "typescript": "^6.0.3",
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3",
+    "webpack-dev-server": "^5.2.4"
+  },
+  "dependencies": {
+    "luxon": "^3.7.2",
+    "papaparse": "^5.5.3"
+  }
+}
