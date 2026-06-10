@@ -42,14 +42,11 @@ I decided on Drip for privacy and security reasons, but I didn't want to lose my
 #### Python 3.10
 * Follow this tutorial for installing python, vscode, and git, on Windows:  
 https://docs.microsoft.com/en-us/windows/python/beginners
-
 * Open main.py and use the play button to run main().
 
 #### Tool / NPM 26.3.0
+* https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows
 * Use nvm to manage verions of node. On Windows, the next best option is [nvm-windows](https://github.com/coreybutler/nvm-windows).
-
 * In the root directory, run `npm install` then `npm run serve`.
-
-* Lint: Uses typescript-eslint and [npx](https://docs.npmjs.com/cli/v11/commands/npx). Run `npm run lint`.  
-
+* Lint: Uses [npx](https://docs.npmjs.com/cli/v11/commands/npx). Run `npm run lint`.  
 * Test: TODO?
