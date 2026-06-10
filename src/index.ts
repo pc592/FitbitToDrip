@@ -34,6 +34,9 @@ const parseFile = (rawFile: File): Promise<RowType[]> => {
 };
 
 const validateFile = (parsedData: RowType[], validateHeaders: string[] = []): boolean => {
+  if (!parsedData.length) {
+    return true;
+  }
   const isValid = parsedData.some((row) => {
     for (const header of validateHeaders) {
       if (header in row) {
